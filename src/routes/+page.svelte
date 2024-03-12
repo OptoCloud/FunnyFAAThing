@@ -3,12 +3,21 @@
 
     export let data: PageData;
 
-    let className = 'No';
+    // Check if theres a license with "SpaceX" as operator
+    let exists = data.faa_data.data.some((license) => {
+        const isSpaceX = license.operatorName === 'SpaceX';
+        const containsBocaChica = license.siteName.includes('Boca Chica');
+        const isMoreThanRev1 = license.licenseName.includes('Rev 2') || license.licenseName.includes('Rev 3');
+        return isSpaceX && containsBocaChica && isMoreThanRev1;
+    });
+
+    let className = exists ? 'Yes' : 'No';
 </script>
 
 <div class="container">
     <div>
         <h1 class={className}>{className}</h1>
+        <h2>Debug: {data.faa_data.data.some((license) => { return license.operatorName === 'SpaceX' && license.siteName.includes('Boca Chica') && (license.licenseName.includes('Rev 1')); })}</h2>
         <table>
             <tr>
                 <th>Licence</th>
