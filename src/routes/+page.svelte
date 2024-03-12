@@ -10,11 +10,11 @@
     });
     
 
-    let className = 'yes';
+    let className = 'No';
 </script>
 
 <div>
-  <h1 class={className}>Page</h1>
+  <h1 class={className}>{className}</h1>
 </div>
 
 <style>
@@ -30,10 +30,10 @@
         background-color: #222222;
     }
 
-    h1.yes {
+    h1.Yes {
         color: #00ff00;
     }
-    h1.no {
+    h1.No {
         color: #ff0000;
     }
 </style>
