@@ -16,7 +16,8 @@
 
 <div class="container">
     <div>
-        <h1 class={className}>{className}</h1>
+        <h1>Has SpaceX received the IFT-3 launch license modification yet?</h1>
+        <h2 class={className}>{className}</h2>
         <table>
             <tr>
                 <th>Licence</th>
@@ -57,10 +58,14 @@
         align-items: center;
     }
 
-    h1.Yes {
+    h1 {
+        color: #ffffff;
+    }
+
+    h2.Yes {
         color: #00ff00;
     }
-    h1.No {
+    h2.No {
         color: #ff0000;
     }
 
