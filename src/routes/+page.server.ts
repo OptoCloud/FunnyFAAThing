@@ -253,7 +253,7 @@ export const load: PageServerLoad = async ({ platform, params }) => {
     for (let i = 0; i < response.data.length; i++) {
         // Remove "https://www.faa.gov/media/" from the start of the licenseUrl
         if (response.data[i].licenseUrl.startsWith("https://www.faa.gov/media/")) {
-            response.data[i].licenseUrl = '/licenses/' + response.data[i].licenseUrl.slice(27);
+            response.data[i].licenseUrl = '/licenses/' + response.data[i].licenseUrl.slice(26);
         }
     }
 
