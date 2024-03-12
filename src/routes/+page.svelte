@@ -1,5 +1,8 @@
 <script lang="ts">
-    import type { PageData } from './$types';
+    import TwitterSummaryTags from '$lib/metadata/Twitter/TwitterSummaryTags.svelte';
+    import OpenGraphTags from '$lib/metadata/OpenGraphTags.svelte';
+import type { PageData } from './$types';
+  import { page } from '$app/stores';
 
     export let data: PageData;
 
@@ -15,6 +18,9 @@
 <svelte:head>
     <title>SpaceX IFT-3 License Status</title>
 </svelte:head>
+
+<TwitterSummaryTags type="summary" title="SpaceX IFT-3 License Status" description="Has SpaceX received the IFT-3 launch license modification yet?" />
+<OpenGraphTags type="website" title="SpaceX IFT-3 License Status" description="Has SpaceX received the IFT-3 launch license modification yet?" url={$page.url.origin} />
 
 <div class="container m-auto p-4 flex flex-col justify-center items-center gap-10">
     <h2 class="h2">Has SpaceX received the IFT-3 launch license modification yet?</h2>
