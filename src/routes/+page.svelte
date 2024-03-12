@@ -25,9 +25,9 @@
             <tr>
                 <th>Licence</th>
                 <th>Operator</th>
-                <th>Location</th>
-                <th>Site/State</th>
                 <th>Vehicle</th>
+                <th>Site</th>
+                <th>State/Location</th>
             </tr>
         </thead>
         <tbody>
@@ -35,9 +35,9 @@
                 <tr>
                     <td><a class="text-blue-500 underline" href={license.licenseUrl}>{license.licenseName}</a></td>
                     <td>{license.operatorName}</td>
-                    <td>{license.locationName}</td>
-                    <td>{license.siteName}</td>
                     <td>{license.vehicleName}</td>
+                    <td>{license.siteName}</td>
+                    <td>{license.locationName}</td>
                 </tr>
             {/each}
         </tbody>
