@@ -1,0 +1,196 @@
+{
+  "Launch Licenses Details": [
+    {
+      "licenseUrl": "https://www.faa.gov/media/74051",
+      "operatorName": "Stratolaunch",
+      "licenseName": "VOL 23-131 (Rev 1)",
+      "locationName": "California",
+      "siteName": "Mojave Air & Space Port",
+      "vehicleName": "Roc & Talon"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69476",
+      "operatorName": "SpaceX",
+      "licenseName": "VOL 23-129 (Rev 1)",
+      "locationName": "Texas",
+      "siteName": "Boca Chica – SpaceX Exclusive",
+      "vehicleName": "Starship Super Heavy"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69466",
+      "operatorName": "Relativity Space, Inc.",
+      "licenseName": "VOL 23-127",
+      "locationName": "Florida",
+      "siteName": "Cape Canaveral",
+      "vehicleName": "Terran 1"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69381",
+      "operatorName": "ABL Space Systems",
+      "licenseName": "VOL 22-125",
+      "locationName": "Alaska",
+      "siteName": "Pacific Spaceport Complex ",
+      "vehicleName": "RS1"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69336",
+      "operatorName": "Astra Space",
+      "licenseName": "VOL 22-124 (Rev 2)",
+      "locationName": "Florida",
+      "siteName": "Cape Canaveral",
+      "vehicleName": "Astra Rocket v3.3"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69391",
+      "operatorName": "Orbital Sciences",
+      "licenseName": "LLO 01-059 (Rev 3)",
+      "locationName": "Florida",
+      "siteName": "Cape Canaveral",
+      "vehicleName": "Pegasus"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69411",
+      "operatorName": "Northrop Grumman Systems Corporation",
+      "licenseName": "LLO 01-058 (Rev 4)",
+      "locationName": "Virginia",
+      "siteName": "Wallops Flight Facility",
+      "vehicleName": "Pegasus"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69401",
+      "operatorName": "Orbital Sciences",
+      "licenseName": "LLO 16-094 (Rev 2)",
+      "locationName": "California",
+      "siteName": "Vandenberg",
+      "vehicleName": "Minotaur IV"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69366",
+      "operatorName": "Orbital Sciences",
+      "licenseName": "LLO 17-099 (Rev 2)",
+      "locationName": "Florida",
+      "siteName": "Cape Canaveral",
+      "vehicleName": "Minotaur IV"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/75156",
+      "operatorName": "SpaceX",
+      "licenseName": "LLO 18-105 (Rev 17)",
+      "locationName": "Florida",
+      "siteName": "Cape Canaveral",
+      "vehicleName": "Falcon 9"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69426",
+      "operatorName": "SpaceX",
+      "licenseName": "LLO 18-111 (Rev 11)",
+      "locationName": "California",
+      "siteName": "Vandenberg",
+      "vehicleName": "Falcon 9"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69431",
+      "operatorName": "United Launch Alliance",
+      "licenseName": "LLO 18-113 (Rev 5)",
+      "locationName": "Florida",
+      "siteName": "Cape Canaveral",
+      "vehicleName": "Atlas V"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/75501",
+      "operatorName": "SpaceX",
+      "licenseName": "LLO 19-110 (Rev 18)",
+      "locationName": "Florida",
+      "siteName": "Kennedy Space Center",
+      "vehicleName": "Falcon 9"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69406",
+      "operatorName": "Astra Space",
+      "licenseName": "LLO 20-118 (Rev 4)",
+      "locationName": "Alaska",
+      "siteName": "Pacific Spaceport Complex ",
+      "vehicleName": "Astra Rocket 3"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69441",
+      "operatorName": "Rocket Lab",
+      "licenseName": "LLO 20-120 (Rev 3)",
+      "locationName": "Virginia",
+      "siteName": "Virginia Commercial Space Flight Center",
+      "vehicleName": "Electron"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69446",
+      "operatorName": "Firefly Aerospace",
+      "licenseName": "LLO 22-126",
+      "locationName": "California",
+      "siteName": "Vandenberg",
+      "vehicleName": "Alpha"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69451",
+      "operatorName": "United Launch Alliance",
+      "licenseName": "LLO 23-128",
+      "locationName": "Florida",
+      "siteName": "Cape Canaveral",
+      "vehicleName": "Vulcan Centaur"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/75496",
+      "operatorName": "Exos Aerospace",
+      "licenseName": "LRLO 18-109 (Rev 3)",
+      "locationName": "New Mexico",
+      "siteName": "Spaceport America",
+      "vehicleName": "SARGE"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69416",
+      "operatorName": "Northrop Grumman Systems Corporation",
+      "licenseName": "LLO 14-091 (Rev. 5)",
+      "locationName": "Virginia",
+      "siteName": "Wallops Flight Facility",
+      "vehicleName": "Antares Configuration 230"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69386",
+      "operatorName": "Orbital Sciences",
+      "licenseName": "LLO 00-053",
+      "locationName": "California",
+      "siteName": "Vandenberg",
+      "vehicleName": "Pegasus"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69461",
+      "operatorName": "Blue Origin",
+      "licenseName": "LRLO 17-105 (Rev 3)",
+      "locationName": "Texas",
+      "siteName": "Launch Site One – Blue Origin Exclusive",
+      "vehicleName": "New Shepard System"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69436",
+      "operatorName": "Rocket Lab",
+      "licenseName": "LLO 19-117 (Rev1)",
+      "locationName": "New Zealand",
+      "siteName": "Mahia Peninsula – Rocket Lab Exclusive",
+      "vehicleName": "Electron"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69456",
+      "operatorName": "Virgin Galactic",
+      "licenseName": "LRLO 16-092 (Rev 4)",
+      "locationName": "New Mexico",
+      "siteName": "Spaceport America",
+      "vehicleName": "SpaceShipTwo"
+    },
+    {
+      "licenseUrl": "https://www.faa.gov/media/69396",
+      "operatorName": "Orbital Sciences",
+      "licenseName": "LLO 04-069 (Rev 3)",
+      "locationName": "Marshall Islands",
+      "siteName": "Reagan Test Site",
+      "vehicleName": "Pegasus"
+    }
+  ]
+}
