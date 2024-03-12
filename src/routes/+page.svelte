@@ -16,7 +16,8 @@
     <div class="flex flex-col items-center gap-10">
         <h1 class="h1">Has SpaceX received the IFT-3 launch license modification yet?</h1>
         <h1 class={'h1 ' + (exists ? 'text-green-500' : 'text-red-500')}>{exists ? 'Yes!' : 'No'}</h1>
-        <table class="table table-hover">
+        <div class="w-full h-[500px] overflow-y-auto">
+            <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Licence</th>
@@ -38,6 +39,7 @@
                 {/each}
             </tbody>
         </table>
+        </div>
         <p>Updated: {new Date(data.faa_data.date).toLocaleString()}</p>
     </div>
 </div>
