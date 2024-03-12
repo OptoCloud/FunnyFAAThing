@@ -12,11 +12,11 @@
     });
 </script>
 
-<div class="absolute inset-0 flex items-center justify-center">
+<div class="m-2">
     <div class="flex flex-col items-center gap-10">
-        <h1 class="h1">Has SpaceX received the IFT-3 launch license modification yet?</h1>
+        <h2 class="h2">Has SpaceX received the IFT-3 launch license modification yet?</h2>
         <h1 class={'h1 ' + (exists ? 'text-green-500' : 'text-red-500')}>{exists ? 'Yes!' : 'No'}</h1>
-        <div class="w-full h-[500px] overflow-y-auto">
+        <div class="w-full h-[400px] md:h-[500px] overflow-y-auto table-container md:text-base">
             <table class="table table-hover">
             <thead>
                 <tr>
