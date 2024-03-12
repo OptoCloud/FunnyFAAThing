@@ -248,7 +248,16 @@ export const load: PageServerLoad = async ({ platform, params }) => {
         throw new Error('No bucket');
     }
 
+    const response = await fetchTheThingCached(bucket);
+
+    for (let i = 0; i < response.data.length; i++) {
+        // Remove "https://www.faa.gov/media/" from the start of the licenseUrl
+        if (response.data[i].licenseUrl.startsWith("https://www.faa.gov/media/")) {
+            response.data[i].licenseUrl = '/licenses/' + response.data[i].licenseUrl.slice(27);
+        }
+    }
+
     return {
-        faa_data: await fetchTheThingCached(bucket),
+        faa_data: response
     };
 }
