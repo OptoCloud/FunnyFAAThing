@@ -231,15 +231,15 @@ async function fetchTheThingCached(bucket: R2Bucket) {
 
         // Check the date is no older than 2 minutes
         if (Date.now() - json.date < 1000 * 60 * 2) {
-            return json.data as LicenseInfo[];
+            return json as { date: number, data: LicenseInfo[] };
         }
     }
 
-    const data = await fetchTheThing();
-    const json = JSON.stringify({ date: Date.now(), data });
-    await bucket.put('thingy', JSON.stringify(json));
+    const json = { date: Date.now(), data: await fetchTheThing() };
+    const data = JSON.stringify(json);
+    await bucket.put('thingy', data, { httpMetadata: { contentType: 'application/json' } });
 
-    return data;
+    return json;
 }
 
 export const load: PageServerLoad = async ({ platform, params }) => {
