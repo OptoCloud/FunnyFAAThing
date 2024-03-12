@@ -17,7 +17,6 @@
 <div class="container">
     <div>
         <h1 class={className}>{className}</h1>
-        <h2>Debug: {data.faa_data.data.some((license) => { return license.operatorName === 'SpaceX' && license.siteName.includes('Boca Chica') && (license.licenseName.includes('Rev 1')); })}</h2>
         <table>
             <tr>
                 <th>Licence</th>
