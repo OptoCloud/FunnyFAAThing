@@ -1,3 +1,6 @@
+import { env } from "$env/dynamic/private";
+import type { PageServerLoad } from "./$types.js";
+
 interface VizColumn {
     aliasIndices: number[];
 }
@@ -217,5 +220,35 @@ async function fetchTheThing() {
     // Get bootstrap json response
     const bootstrapText = await bootstrap.text();
 
-    return parseResponse(bootstrapText);
+    return parseResponse(bootstrapText).get('Launch Licenses Details') || [];
+}
+
+async function fetchTheThingCached(bucket: R2Bucket) {
+    const test = await bucket.get('thingy');
+    if (test) {
+        const data = await test.text();
+        const json = JSON.parse(data);
+
+        // Check the date is no older than 2 minutes
+        if (Date.now() - json.date < 1000 * 60 * 2) {
+            return json.data as LicenseInfo[];
+        }
+    }
+
+    const data = await fetchTheThing();
+    const json = JSON.stringify({ date: Date.now(), data });
+    await bucket.put('thingy', JSON.stringify(json));
+
+    return data;
+}
+
+export const load: PageServerLoad = async ({ platform, params }) => {
+    const bucket = platform?.env?.FAA_STUFF;
+    if (!bucket) {
+        throw new Error('No bucket');
+    }
+
+    return {
+        faa_data: await fetchTheThingCached(bucket),
+    };
 }

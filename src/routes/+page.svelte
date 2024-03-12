@@ -1,20 +1,14 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import type { PageData } from './$types';
 
-    // Fetch data from https://explore.dot.gov/t/FAA/views/CommercialSpaceTransportation/LaunchLicenses?%3Aembed=y&%3AisGuestRedirectFromVizportal=y
-
-    onMount(async () => {
-        const response = await fetch('https://explore.dot.gov/t/FAA/views/CommercialSpaceTransportation/LaunchLicenses?%3Aembed=y&%3AisGuestRedirectFromVizportal=y');
-        const data = await response.json();
-        console.log(data);
-    });
-    
+    export let data: PageData;
 
     let className = 'No';
 </script>
 
 <div>
   <h1 class={className}>{className}</h1>
+  <p>{JSON.stringify(data.faa_data)}</p>
 </div>
 
 <style>
