@@ -24,7 +24,7 @@ import type { PageData } from './$types';
 
 <div class="container m-auto p-4 flex flex-col justify-center items-center gap-10">
     <h2 class="h2">Has SpaceX received the IFT-3 launch license modification yet?</h2>
-    <h1 class="h1 text-green-500">YES!!! IS POINTY END UP??</h1>
+    <h1 class={'h1 ' + (exists ? 'text-green-500' : 'text-red-500')}>{exists ? 'YES!!!\nIS POINTY END UP??' : 'Not Yet'}</h1>
     <div class="w-full h-[400px] md:h-[500px] overflow-y-auto table-container md:text-base">
         <table class="table table-hover">
         <thead>
