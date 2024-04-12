@@ -1,5 +1,9 @@
-import { env } from "$env/dynamic/private";
-import type { PageServerLoad } from "./$types.js";
+import type { RequestHandler } from "@sveltejs/kit";
+import type { R2Bucket } from "@cloudflare/workers-types";
+import type { LicenseInfo } from "$lib/types/LicenseInfo";
+import type { LicensesApiResponse } from "$lib/types/LicensesApiResponse";
+
+const CacheTimeSeconds = 60 * 2;
 
 interface VizColumn {
     aliasIndices: number[];
@@ -8,14 +12,6 @@ interface VizDataColumn {
     dataType: string;
     dataValues: (number | string)[];
 }
-type LicenseInfo = {
-    licenseUrl: string;
-    operatorName: string;
-    licenseName: string;
-    locationName: string;
-    siteName: string;
-    vehicleName: string;
-};
 
 function vizMapper(cols: VizColumn[], lookup: Map<string, any>, colNum: number, type: string) {
     const aliasIndicies = cols[colNum].aliasIndices;
@@ -223,15 +219,15 @@ async function fetchTheThing() {
     return parseResponse(bootstrapText).get('Launch Licenses Details') || [];
 }
 
-async function fetchTheThingCached(bucket: R2Bucket) {
+async function fetchTheThingCached(bucket: R2Bucket): Promise<LicensesApiResponse> {
     const test = await bucket.get('thingy');
     if (test) {
         const data = await test.text();
         const json = JSON.parse(data);
 
         // Check the date is no older than 2 minutes
-        if (Date.now() - json.date < 1000 * 60 * 2) {
-            return json as { date: number, data: LicenseInfo[] };
+        if (Date.now() - json.date < CacheTimeSeconds * 1000) {
+            return json as LicensesApiResponse;
         }
     }
 
@@ -242,7 +238,7 @@ async function fetchTheThingCached(bucket: R2Bucket) {
     return json;
 }
 
-export const load: PageServerLoad = async ({ platform, params }) => {
+export const GET: RequestHandler = async ({ platform, params }) => {
     const bucket = platform?.env?.FAA_STUFF;
     if (!bucket) {
         throw new Error('No bucket');
@@ -253,11 +249,14 @@ export const load: PageServerLoad = async ({ platform, params }) => {
     for (let i = 0; i < response.data.length; i++) {
         // Remove "https://www.faa.gov/media/" from the start of the licenseUrl
         if (response.data[i].licenseUrl.startsWith("https://www.faa.gov/media/")) {
-            response.data[i].licenseUrl = '/licenses/' + response.data[i].licenseUrl.slice(26);
+            response.data[i].licenseUrl = '/documents/' + response.data[i].licenseUrl.slice(26);
         }
     }
 
-    return {
-        faa_data: response
-    };
+    return new Response(JSON.stringify(response), {
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': `public, max-age=${CacheTimeSeconds}`,
+        },
+    });
 }
