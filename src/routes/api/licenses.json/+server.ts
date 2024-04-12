@@ -256,7 +256,7 @@ export const GET: RequestHandler = async ({ platform, params }) => {
     return new Response(JSON.stringify(response), {
         headers: {
             'Content-Type': 'application/json',
-            'Cache-Control': `public, max-age=${CacheTimeSeconds}`,
+            'Cache-Control': `public, max-age=${CacheTimeSeconds}, stale-while-revalidate=60, stale-if-error=300`,
         },
     });
 }
