@@ -7,8 +7,8 @@
     $: site = query.get('site')?.toLocaleLowerCase() ?? null;
     $: includes = query.get('includes')?.toLocaleLowerCase() ?? null;
     $: title = query.get('title') ?? 'License Status';
-    $: successMessage = query.get('successMessage') ?? 'OK';
-    $: failureMessage = query.get('failureMessage') ?? 'Waiting';
+    $: successMessage = query.get('success_msg') ?? 'OK';
+    $: failureMessage = query.get('failure_msg') ?? 'Waiting';
 
     export let data: PageData;
 
