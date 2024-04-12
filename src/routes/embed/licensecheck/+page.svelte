@@ -28,7 +28,7 @@
 </script>
 
 <div class="container m-auto p-4 flex flex-col justify-center items-center gap-10">
-    <h2 class="h2">{title}</h2>
+    <h2 class="h2 text-nowrap">{title}</h2>
     <h1 class={'h1 ' + (exists ? 'text-green-500' : 'text-red-500')}>{exists ? successMessage : failureMessage}</h1>
-    <p>Updated: {data.lastUpdated.toLocaleString()}</p>
+    <p class="hidden xs:block">Updated: {data.lastUpdated.toLocaleString()}</p>
 </div>
