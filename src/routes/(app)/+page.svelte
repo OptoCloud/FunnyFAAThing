@@ -16,7 +16,7 @@
         const containsBocaChica = license.siteName.includes('Boca Chica');
         const isMoreThanRev1 = license.licenseName.includes('Rev 3') || license.licenseName.includes('Rev 4');
         return isSpaceX && containsBocaChica && isMoreThanRev1;
-    }) ?? false;
+    });
 
     const title = 'SpaceX IFT-4 License Status';
     const description = 'Has SpaceX received the IFT-4 launch license modification yet?';
