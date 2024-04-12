@@ -13,7 +13,7 @@
     export let data: PageData;
 
     // Check if theres a license with "SpaceX" as operator
-    const exists = data.licenses.some((license) => {
+    $: exists = data.licenses.some((license) => {
         if (operator !== null && license.operatorName.toLocaleLowerCase() !== operator) {
             return false;
         }
