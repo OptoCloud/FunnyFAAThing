@@ -2,7 +2,7 @@ import type { LicensesApiResponse } from '$lib/types/LicensesApiResponse';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
-    const res = await fetch(`/api/licenses.json`);
+    const res = await fetch(`/api/licenses.json`, { cache: 'no-store' });
     if (!res.ok) {
         throw new Error('Failed to fetch licenses, please try again later or contact the developer.');
     }
